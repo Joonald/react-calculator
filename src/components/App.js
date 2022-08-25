@@ -1,5 +1,8 @@
 import '../styles/App.css';
 import Button from './Button';
+import Screen from './Screen';
+import '../styles/Button.css';
+
 import { calculatorButtons } from "../data/calculator-base-button-data";
 
 function App() {
@@ -7,10 +10,22 @@ function App() {
     console.log(value)
   }
   return (
-    <div className="App">
+    <div>
       <h1>React Calculator</h1>
-      {calculatorButtons.map((btn, i) => 
-      <Button value={btn.value} handleClick={handleClick} text={btn.text} key={i}/>)}
+      <div className="App">
+        <Screen/>
+        <div className='button-wrapper'>
+          {calculatorButtons.map((btn, i) => 
+          <Button 
+          key={btn.value}
+          value={btn.value}
+          text={btn.text}
+          className={btn.type}
+          type={btn.type}
+          handleClick={handleClick}
+          />)}
+        </div>
+      </div>
     </div>
   );
 }

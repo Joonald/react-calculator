@@ -30,6 +30,12 @@ export const calculatorButtons = [
     value: 9,
   },
   {
+    type: 'operator',
+    className: 'divide',
+    text: '\u00f7',
+    value: '/',
+  },
+  {
     type: 'number',
     className: 'four',
     text: 4,
@@ -46,6 +52,12 @@ export const calculatorButtons = [
     className: 'six',
     text: 6,
     value: 6,
+  },
+  {
+    type: 'operator',
+    className: 'multiply',
+    text: '\u00d7',
+    value: '*',
   },
   {
     type: 'number',
@@ -66,39 +78,27 @@ export const calculatorButtons = [
     value: 3,
   },
   {
-    type: 'number',
-    className: 'zero',
-    text: 0,
-    value: 0,
-  },
-  {
-    type: 'operator',
-    className: 'multiply',
-    text: '\u00d7',
-    value: '*',
-  },
-  {
-    type: 'operator',
-    className: 'divide',
-    text: '\u00f7',
-    value: '/',
-  },
-  {
     type: 'operator',
     className: 'add',
     text: '+',
     value: '+',
   },
   {
-    type: 'operator',
-    className: 'subtract',
-    text: '-',
-    value: '-',
+    type: 'number',
+    className: 'zero',
+    text: 0,
+    value: 0,
   },
   {
     type: 'enter',
     className: 'equal',
     text: '=',
     value: '=',
+  },
+  {
+    type: 'operator',
+    className: 'subtract',
+    text: '-',
+    value: '-',
   },
 ];

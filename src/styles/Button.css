@@ -1,0 +1,54 @@
+.button-wrapper {
+    width: 100%;
+    height: calc(100% - 110px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 10px;
+}
+.number {
+    border: none;
+    background-color: rgb(80, 60, 209);
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    outline: none;
+    grid-column: span 1;
+}
+.number:hover {
+    background-color: rgb(61, 43, 184);
+  }
+.clear {
+    border: none;
+    background-color: rgb(209, 60, 60);
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    outline: none;
+    grid-column: span 2;
+}
+.operator {
+    border: none;
+    background-color: rgb(255, 131, 6);
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    outline: none;
+}
+.enter {
+    border: none;
+    background-color: rgb(18, 245, 6);
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    outline: none;
+    grid-column: span 2;
+}
