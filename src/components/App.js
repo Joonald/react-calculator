@@ -10,7 +10,6 @@ function App() {
   const [opB, setB] = useState('');
   const [operator, setOp] = useState('');
   const [display, setDisplay] = useState('');
-  const [memStore, setMemory] = useState('');
 
 
 
@@ -69,6 +68,9 @@ function App() {
       case 'enter':
         const result = calculate(opA, opB, operator);
         setDisplay(`${result}`);
+        setOp('');
+        setA(result);
+        setB('');
         break;
       case 'clear':
         console.log(value);
