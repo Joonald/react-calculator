@@ -6,29 +6,67 @@ import { useState } from 'react';
 import { calculatorButtons } from "../data/calculator-base-button-data";
 
 function App() {
+  const [opA, setA] = useState('');
+  const [opB, setB] = useState('');
+  const [operator, setOp] = useState('');
   const [display, setDisplay] = useState('');
-  const [calc, setCalc] = useState('');
+  const ACCEPTED_OPS = ['+','-','*','/'];
+
+  function calculate (a, b, op) {
+    if (isNaN(a) === true || isNaN(b) === true ){
+      console.log('Go away hacker');
+      return;
+    } else {
+      if ( ACCEPTED_OPS.indexOf(op) === -1 ) {
+        console.log('Not an acceptable operator');
+      } else {
+        let result = '';
+        switch (op) {
+          case '+':
+            result = Number(a) + Number(b);
+            return result;
+          case '-':
+            result = Number(a) - Number(b);
+            return result;
+          case '/':
+            result = Number(a) / Number(b);
+            return result;
+          case '*':
+            result = Number(a) * Number(b);
+            return result;
+          default:   
+        }
+      }
+    }
+  }
 
   function handleClick ( value, type ) {
     switch (type) {
       case 'number':
-        setDisplay(display + value);
-        setCalc(calc + value);
-        console.log(value);
+        if (operator === '') {
+          setA(opA + value);
+          setDisplay(display + value);
+          console.log(opA,'a');
+        } else {
+          setB(opB + value);
+          setDisplay(display + value);
+          console.log(opB,'b');
+        }
         break;
       case 'operator':
+        setOp(operator + value);
         setDisplay(display + value);
-        setCalc(calc + value);
         break;
       case 'enter':
-        const result = eval(calc); //eslint-disable-line
+        const result = calculate(opA, opB, operator);
         setDisplay(`${result}`);
         break;
       case 'clear':
         console.log(value);
         if (value === 'All Clear') {
           setDisplay('');
-          setCalc('');
+          setA('');
+          setB('');
         } else {
           setDisplay(display.slice( 0 , -1 ))
         } break;
