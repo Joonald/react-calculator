@@ -10,6 +10,15 @@ function App() {
   const [opB, setB] = useState('');
   const [operator, setOp] = useState('');
   const [display, setDisplay] = useState('');
+  const [memStore, setMemory] = useState('');
+
+
+
+
+
+
+
+// variable to check acceptable operations 
   const ACCEPTED_OPS = ['+','-','*','/'];
 
   function calculate (a, b, op) {
@@ -55,7 +64,7 @@ function App() {
         break;
       case 'operator':
         setOp(operator + value);
-        setDisplay(display + value);
+        setDisplay('');
         break;
       case 'enter':
         const result = calculate(opA, opB, operator);
@@ -67,6 +76,7 @@ function App() {
           setDisplay('');
           setA('');
           setB('');
+          setOp('');
         } else {
           setDisplay(display.slice( 0 , -1 ))
         } break;
